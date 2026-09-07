@@ -1,5 +1,7 @@
 # Chronowalker
 
+![Chronowalker](Assets/ChronowalkerWordmark.png)
+
 [![CI](https://github.com/zero-tbod/Chronowalker/actions/workflows/ci.yml/badge.svg)](https://github.com/zero-tbod/Chronowalker/actions/workflows/ci.yml)
 
 Chronowalker is an independent, open-source Windows app for configuring the time system in *The Blood of Dawnwalker*. It provides a modern WinUI 3 interface, safe `Game.ini` editing, automatic game-version detection, and reversible installation.
