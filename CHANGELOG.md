@@ -1,8 +1,10 @@
 # Changelog
 
-All notable project changes will be recorded here. The project has not yet published a versioned binary release.
+All notable project changes will be recorded here.
 
 ## Unreleased
+
+## 0.1.5 - 2026-09-07
 
 ### Added
 
