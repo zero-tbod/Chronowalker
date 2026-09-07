@@ -1,0 +1,51 @@
+root = true
+
+[*.cs]
+charset = utf-8-bom
+end_of_line = crlf
+insert_final_newline = true
+dotnet_style_namespace_match_folder = true:suggestion
+csharp_style_namespace_declarations = file_scoped:warning
+dotnet_naming_rule.private_fields_rule.severity = warning
+dotnet_naming_rule.private_fields_rule.symbols = private_fields
+dotnet_naming_rule.private_fields_rule.style = underscore_prefix
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
+dotnet_naming_style.underscore_prefix.required_prefix = _
+dotnet_naming_style.underscore_prefix.capitalization = camel_case
+
+# Constants and shared immutable fields use conventional PascalCase names.
+dotnet_naming_rule.private_constants_rule.severity = warning
+dotnet_naming_rule.private_constants_rule.symbols = private_constants
+dotnet_naming_rule.private_constants_rule.style = pascal_case
+dotnet_naming_symbols.private_constants.applicable_kinds = field
+dotnet_naming_symbols.private_constants.applicable_accessibilities = private
+dotnet_naming_symbols.private_constants.required_modifiers = const
+dotnet_naming_rule.private_static_readonly_rule.severity = warning
+dotnet_naming_rule.private_static_readonly_rule.symbols = private_static_readonly
+dotnet_naming_rule.private_static_readonly_rule.style = pascal_case
+dotnet_naming_symbols.private_static_readonly.applicable_kinds = field
+dotnet_naming_symbols.private_static_readonly.applicable_accessibilities = private
+dotnet_naming_symbols.private_static_readonly.required_modifiers = static, readonly
+dotnet_naming_style.pascal_case.capitalization = pascal_case
+
+# These StyleCop defaults conflict with this repository's explicit field conventions.
+dotnet_diagnostic.SA1101.severity = none
+dotnet_diagnostic.SA1309.severity = none
+
+# The repository-level GPL license replaces repetitive per-file legal headers.
+dotnet_diagnostic.SA1633.severity = none
+
+# StyleCop 1.1.118 predates target-typed new, collection expressions, and modern tuple formatting.
+dotnet_diagnostic.SA1000.severity = none
+dotnet_diagnostic.SA1009.severity = none
+dotnet_diagnostic.SA1010.severity = none
+
+[*.{xaml,resw,json,md}]
+charset = utf-8
+end_of_line = crlf
+insert_final_newline = true
+
+[Chronowalker.Core.Tests/**/*.cs]
+# MSTest methods return Task for asynchronous completion; XML return docs add no value.
+dotnet_diagnostic.SA1615.severity = none

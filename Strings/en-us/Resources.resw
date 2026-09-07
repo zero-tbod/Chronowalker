@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="WindowTitle" xml:space="preserve"><value>Chronowalker</value></data>
+  <data name="HeroTitle.Text" xml:space="preserve"><value>Take back your time</value></data>
+  <data name="HeroSubtitle.Text" xml:space="preserve"><value>Configure The Blood of Dawnwalker's time segments and story deadline with a verified, reversible Game.ini update.</value></data>
+  <data name="ConfigurationHeading.Text" xml:space="preserve"><value>Configuration</value></data>
+  <data name="PlatformComboBox.Header" xml:space="preserve"><value>Game version</value></data>
+  <data name="PlatformComboBox.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve"><value>Game version</value></data>
+  <data name="PlatformComboBox.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve"><value>Choose automatic detection, Steam or GOG, or Xbox PC.</value></data>
+  <data name="SegmentsComboBox.Header" xml:space="preserve"><value>Segments per 12-hour phase</value></data>
+  <data name="SegmentsComboBox.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve"><value>Segments per 12-hour phase</value></data>
+  <data name="SegmentsComboBox.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve"><value>Higher values provide more available time slots. Values above 18 are experimental.</value></data>
+  <data name="ExperimentalAcknowledgement.Content" xml:space="preserve"><value>I understand that values above 18 are experimental.</value></data>
+  <data name="ExperimentalAcknowledgement.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve"><value>Accept experimental segment setting</value></data>
+  <data name="DeadlineComboBox.Header" xml:space="preserve"><value>Story deadline</value></data>
+  <data name="DeadlineComboBox.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve"><value>Story deadline</value></data>
+  <data name="DeadlineComboBox.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve"><value>Choose a preset or enter a custom stored value.</value></data>
+  <data name="CustomDeadlineBox.Header" xml:space="preserve"><value>Custom stored value</value></data>
+  <data name="CustomDeadlineBox.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve"><value>Custom stored deadline value</value></data>
+  <data name="CustomDeadlineBox.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve"><value>Add one to your intended number of story days. Enter 366 for an effective 365 days.</value></data>
+  <data name="CustomDeadlineGuidance.Text" xml:space="preserve"><value>The game requires a +1 adjustment. If you want 365 playable days, enter 366.</value></data>
+  <data name="ConfigPathHeading.Text" xml:space="preserve"><value>Target Game.ini</value></data>
+  <data name="MainCommandBar.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve"><value>Chronowalker actions</value></data>
+  <data name="InstallButton.Label" xml:space="preserve"><value>Install / update</value></data>
+  <data name="InstallButton.AccessKey" xml:space="preserve"><value>I</value></data>
+  <data name="InstallButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve"><value>Install or update Chronowalker</value></data>
+  <data name="InstallButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.AcceleratorKey" xml:space="preserve"><value>Control+I</value></data>
+  <data name="RecommendedButton.Label" xml:space="preserve"><value>Recommended</value></data>
+  <data name="RecommendedButton.AccessKey" xml:space="preserve"><value>R</value></data>
+  <data name="RecommendedButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve"><value>Apply Recommended settings</value></data>
+  <data name="RefreshButton.Label" xml:space="preserve"><value>Detect again</value></data>
+  <data name="RefreshButton.AccessKey" xml:space="preserve"><value>D</value></data>
+  <data name="RefreshButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve"><value>Detect the game version again</value></data>
+  <data name="ExportButton.Label" xml:space="preserve"><value>Export Game.ini</value></data>
+  <data name="ExportButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve"><value>Export a manual Game.ini</value></data>
+  <data name="UninstallButton.Label" xml:space="preserve"><value>Uninstall and restore</value></data>
+  <data name="UninstallButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve"><value>Uninstall Chronowalker and restore original values</value></data>
+  <data name="BusyProgressRing.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve"><value>Chronowalker is working</value></data>
+  <data name="SegmentOption8" xml:space="preserve"><value>8 — base-game default</value></data>
+  <data name="SegmentOption12" xml:space="preserve"><value>12</value></data>
+  <data name="SegmentOption16" xml:space="preserve"><value>16</value></data>
+  <data name="SegmentOption18" xml:space="preserve"><value>18 — recommended</value></data>
+  <data name="SegmentOption26" xml:space="preserve"><value>26 — experimental</value></data>
+  <data name="SegmentOption32" xml:space="preserve"><value>32 — experimental</value></data>
+  <data name="DeadlineOption30" xml:space="preserve"><value>30 days</value></data>
+  <data name="DeadlineOption45" xml:space="preserve"><value>45 days</value></data>
+  <data name="DeadlineOption60" xml:space="preserve"><value>60 days</value></data>
+  <data name="DeadlineOption80" xml:space="preserve"><value>80 days</value></data>
+  <data name="DeadlineOption100" xml:space="preserve"><value>100 days</value></data>
+  <data name="DeadlineOptionUnlimited" xml:space="preserve"><value>9999 — effectively unlimited</value></data>
+  <data name="DeadlineOptionCustom" xml:space="preserve"><value>Custom</value></data>
+  <data name="PlatformOptionAuto" xml:space="preserve"><value>Auto-detect</value></data>
+  <data name="PlatformOptionSteamGog" xml:space="preserve"><value>Steam / GOG</value></data>
+  <data name="PlatformOptionXbox" xml:space="preserve"><value>Xbox PC</value></data>
+  <data name="DetectedSteamGog" xml:space="preserve"><value>Steam / GOG detected.</value></data>
+  <data name="DetectedXbox" xml:space="preserve"><value>Xbox PC detected.</value></data>
+  <data name="DetectedAmbiguous" xml:space="preserve"><value>Both configuration families were found. Choose the correct game version manually.</value></data>
+  <data name="DetectedUnknown" xml:space="preserve"><value>No definitive installation was found. Choose the game version manually.</value></data>
+  <data name="ConfigPathUnavailable" xml:space="preserve"><value>Choose Steam / GOG or Xbox PC to resolve the path.</value></data>
+  <data name="CustomDeadlinePreview" xml:space="preserve"><value>Effective deadline: {0:N0} days (stored value: {1:N0}).</value></data>
+  <data name="CustomDeadlineInvalidPreview" xml:space="preserve"><value>Enter a positive whole number.</value></data>
+  <data name="StatusReadyTitle" xml:space="preserve"><value>Ready</value></data>
+  <data name="StatusReadyMessage" xml:space="preserve"><value>Review the settings, then install or export a manual Game.ini.</value></data>
+  <data name="StatusDetectionTitle" xml:space="preserve"><value>Game detection</value></data>
+  <data name="StatusRecommendedTitle" xml:space="preserve"><value>Recommended settings applied</value></data>
+  <data name="StatusRecommendedMessage" xml:space="preserve"><value>18 segments and a custom stored value of 366 give an effective 365-day deadline.</value></data>
+  <data name="StatusChoosePlatformTitle" xml:space="preserve"><value>Choose a game version</value></data>
+  <data name="StatusChoosePlatformMessage" xml:space="preserve"><value>Automatic detection was not definitive, so select Steam / GOG or Xbox PC.</value></data>
+  <data name="StatusInvalidDeadlineTitle" xml:space="preserve"><value>Invalid custom deadline</value></data>
+  <data name="StatusInvalidDeadlineMessage" xml:space="preserve"><value>Enter a positive whole number. Remember to add one: use 366 for an effective 365 days.</value></data>
+  <data name="StatusInstalledTitle" xml:space="preserve"><value>Chronowalker installed</value></data>
+  <data name="StatusInstalledMessage" xml:space="preserve"><value>Settings were written and verified. Game.ini is Read-only: {0}</value></data>
+  <data name="StatusExportedTitle" xml:space="preserve"><value>Manual Game.ini exported</value></data>
+  <data name="StatusExportedMessage" xml:space="preserve"><value>The Read-only export is ready at: {0}</value></data>
+  <data name="StatusUninstalledTitle" xml:space="preserve"><value>Chronowalker uninstalled</value></data>
+  <data name="StatusUninstalledMessage" xml:space="preserve"><value>Original values and the prior Read-only state were restored at: {0}</value></data>
+  <data name="StatusNothingToUndoTitle" xml:space="preserve"><value>Nothing to restore</value></data>
+  <data name="StatusNothingToUndoMessage" xml:space="preserve"><value>No Chronowalker rollback state exists for: {0}</value></data>
+  <data name="StatusFailedTitle" xml:space="preserve"><value>Operation failed safely</value></data>
+  <data name="StatusFailedMessage" xml:space="preserve"><value>Chronowalker could not complete the operation. Check file access and the selected game version, then try again.</value></data>
+</root>

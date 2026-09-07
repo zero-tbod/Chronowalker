@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Chronowalker.Core.Tests/Chronowalker.Core.Tests.csproj" />
+  <Project Path="Chronowalker.Core/Chronowalker.Core.csproj" />
+  <Project Path="Chronowalker.csproj" />
+</Solution>
