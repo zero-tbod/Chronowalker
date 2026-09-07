@@ -45,6 +45,7 @@ internal sealed partial class MainViewModel : ObservableObject
             new(_strings.Get("DeadlineOption60"), 60),
             new(_strings.Get("DeadlineOption80"), 80),
             new(_strings.Get("DeadlineOption100"), 100),
+            new(_strings.Get("DeadlineOptionYear"), 365),
             new(_strings.Get("DeadlineOptionUnlimited"), 9999),
             new(_strings.Get("DeadlineOptionCustom"), null),
         ];
@@ -56,7 +57,7 @@ internal sealed partial class MainViewModel : ObservableObject
         ];
 
         SelectedSegment = SegmentChoices.Single(static choice => choice.Value == 18);
-        SelectedDeadline = DeadlineChoices.Single(static choice => choice.Value is null);
+        SelectedDeadline = DeadlineChoices.Single(static choice => choice.Value == 365);
         SelectedPlatform = PlatformChoices.Single(static choice => choice.Value == PlatformChoice.Auto);
         DetectedPlatformLabel = _strings.Get("DetectedUnknown");
         StatusTitle = _strings.Get("StatusReadyTitle");

@@ -9,10 +9,10 @@ public sealed class ChronowalkerSettings
     public int Segments { get; set; } = 18;
 
     /// <summary>Gets or sets the selected deadline value.</summary>
-    public int Days { get; set; } = 366;
+    public int Days { get; set; } = 365;
 
     /// <summary>Gets or sets a value indicating whether the deadline is custom.</summary>
-    public bool IsCustomDeadline { get; set; } = true;
+    public bool IsCustomDeadline { get; set; }
 
     /// <summary>Gets or sets the selected platform behavior.</summary>
     public PlatformChoice PlatformChoice { get; set; } = PlatformChoice.Auto;

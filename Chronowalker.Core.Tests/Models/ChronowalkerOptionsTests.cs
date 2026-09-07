@@ -17,6 +17,17 @@ public sealed class ChronowalkerOptionsTests
         Assert.AreEqual(31, result);
     }
 
+    /// <summary>Verifies that the one-year preset stores the required adjusted value.</summary>
+    [TestMethod]
+    public void GetWrittenDeadline_OneYearPreset_ReturnsThreeHundredSixtySix()
+    {
+        var options = new ChronowalkerOptions(18, 365, false, GamePlatform.SteamOrGog);
+
+        int result = options.GetWrittenDeadline();
+
+        Assert.AreEqual(366, result);
+    }
+
     /// <summary>Verifies that a custom value is written exactly as entered.</summary>
     [TestMethod]
     public void GetWrittenDeadline_CustomThirty_ReturnsThirty()

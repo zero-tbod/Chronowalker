@@ -6,6 +6,7 @@ This document is a concise proposal for Noviathan, author of **Configurable Exte
 
 ### Custom story deadline
 
+- Add a `365 days — 1 year` preset that stores 366 and use it as the first-run default.
 - Add a `Custom` choice to the story-deadline selector.
 - Accept positive whole numbers.
 - Explain the game's +1 behavior beside the field: a requested 365 playable days must be stored as 366.
@@ -37,6 +38,8 @@ This document is a concise proposal for Noviathan, author of **Configurable Exte
 - Present the same settings through a C# WinUI 3 desktop app.
 - Keep user-facing text in localized resources.
 - Provide keyboard navigation, automation names, accessible status reporting, and responsive scrolling.
+- Use a compact two-column layout that expands for status content and scrolls only when the display cannot fit it.
+- Offer a self-contained, single-file x64 executable for direct transfer.
 - Separate the platform-neutral INI/configuration engine from Windows UI code and test the engine independently.
 
 ## Ownership and permission boundary

@@ -6,4 +6,5 @@ obj/
 *.user
 *.suo
 AppPackages/
+artifacts/
 TestResults/

@@ -16,14 +16,17 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <DefaultItemExcludes>$(DefaultItemExcludes);Chronowalker.Core\**;Chronowalker.Core.Tests\**</DefaultItemExcludes>
+    <EnableDefaultNoneItems>false</EnableDefaultNoneItems>
+    <DefaultItemExcludes>$(DefaultItemExcludes);artifacts\**;Chronowalker.Core\**;Chronowalker.Core.Tests\**</DefaultItemExcludes>
   </PropertyGroup>
 
   <ItemGroup>
     <Content Include="Assets\AppIcon.ico" />
+    <Content Include="Assets\ChronowalkerWordmark.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -48,8 +51,22 @@
 
   <!-- Publish Properties -->
   <PropertyGroup>
-    <PublishReadyToRun Condition="'$(Configuration)' == 'Debug'">False</PublishReadyToRun>
-    <PublishReadyToRun Condition="'$(Configuration)' != 'Debug'">True</PublishReadyToRun>
+    <PublishReadyToRun>false</PublishReadyToRun>
     <PublishTrimmed>false</PublishTrimmed>
   </PropertyGroup>
+
+  <!-- Unpackaged WinUI publish omits these generated runtime resources by default. -->
+  <Target
+    Name="CopyWinUiRuntimeResourcesToPublishDirectory"
+    AfterTargets="Publish"
+    Condition="'$(PublishSingleFile)' != 'true'">
+    <ItemGroup>
+      <_WinUiRuntimeResource Include="$(TargetDir)*.xbf" />
+      <_WinUiRuntimeResource Include="$(TargetDir)$(AssemblyName).pri" />
+    </ItemGroup>
+    <Copy
+      SourceFiles="@(_WinUiRuntimeResource)"
+      DestinationFolder="$(PublishDir)"
+      SkipUnchangedFiles="true" />
+  </Target>
 </Project>

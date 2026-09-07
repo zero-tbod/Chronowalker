@@ -17,8 +17,8 @@ public sealed class SettingsServiceTests
         ChronowalkerSettings settings = await service.LoadAsync();
 
         Assert.AreEqual(18, settings.Segments);
-        Assert.AreEqual(366, settings.Days);
-        Assert.IsTrue(settings.IsCustomDeadline);
+        Assert.AreEqual(365, settings.Days);
+        Assert.IsFalse(settings.IsCustomDeadline);
     }
 
     /// <summary>Verifies that saved custom settings survive a reload.</summary>

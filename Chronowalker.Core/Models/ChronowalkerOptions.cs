@@ -6,7 +6,7 @@
 public sealed class ChronowalkerOptions
 {
     private static readonly int[] AllowedSegments = [8, 12, 16, 18, 26, 32];
-    private static readonly int[] AllowedPresetDays = [30, 45, 60, 80, 100, 9999];
+    private static readonly int[] AllowedPresetDays = [30, 45, 60, 80, 100, 365, 9999];
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ChronowalkerOptions"/> class.
@@ -42,7 +42,7 @@ public sealed class ChronowalkerOptions
     public int GetWrittenDeadline()
     {
         Validate();
-        return !IsCustomDeadline && Days == 30 ? 31 : Days;
+        return !IsCustomDeadline && Days is 30 or 365 ? Days + 1 : Days;
     }
 
     /// <summary>

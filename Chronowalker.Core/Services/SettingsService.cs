@@ -89,7 +89,7 @@ public sealed class SettingsService
     {
         bool validSegments = settings.Segments is 8 or 12 or 16 or 18 or 26 or 32;
         bool validDays = settings.Days > 0;
-        bool validPreset = settings.IsCustomDeadline || settings.Days is 30 or 45 or 60 or 80 or 100 or 9999;
+        bool validPreset = settings.IsCustomDeadline || settings.Days is 30 or 45 or 60 or 80 or 100 or 365 or 9999;
         bool validPlatform = Enum.IsDefined(settings.PlatformChoice);
         return validSegments && validDays && validPreset && validPlatform;
     }

@@ -12,24 +12,32 @@
 
     <Grid Loaded="OnWindowLoaded">
         <ScrollViewer
+            x:Name="RootScrollViewer"
             HorizontalContentAlignment="Stretch"
             HorizontalScrollBarVisibility="Disabled"
             VerticalScrollBarVisibility="Auto">
             <StackPanel
                 MaxWidth="960"
-                Margin="20,16,20,22"
+                Margin="16,12,16,16"
                 HorizontalAlignment="Stretch"
-                Spacing="14">
-                <StackPanel Spacing="2">
-                    <TextBlock
-                        x:Uid="HeroTitle"
-                        Style="{ThemeResource SubtitleTextBlockStyle}" />
+                Spacing="10">
+                <StackPanel
+                    x:Name="AppTitleBar"
+                    Padding="0,2"
+                    Spacing="1">
+                    <Image
+                        Height="52"
+                        Margin="150,0"
+                        AutomationProperties.Name="Chronowalker"
+                        Source="Assets/ChronowalkerWordmark.png"
+                        Stretch="Uniform" />
                     <TextBlock
                         x:Uid="HeroSubtitle"
                         MaxWidth="820"
-                        HorizontalAlignment="Left"
+                        HorizontalAlignment="Center"
                         Foreground="{ThemeResource TextFillColorSecondaryBrush}"
                         Style="{ThemeResource CaptionTextBlockStyle}"
+                        TextAlignment="Center"
                         TextWrapping="WrapWholeWords" />
                 </StackPanel>
 
@@ -40,23 +48,34 @@
                     IsOpen="True"
                     Message="{x:Bind ViewModel.StatusMessage, Mode=OneWay}"
                     Severity="{x:Bind ViewModel.StatusSeverity, Mode=OneWay}"
+                    SizeChanged="OnStatusInfoBarSizeChanged"
                     Title="{x:Bind ViewModel.StatusTitle, Mode=OneWay}" />
 
                 <Border
-                    Padding="16"
+                    Padding="12"
                     Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
                     BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
                     BorderThickness="1"
-                    CornerRadius="8">
-                    <StackPanel Spacing="14">
-                        <TextBlock
-                            x:Uid="ConfigurationHeading"
-                            Style="{ThemeResource SubtitleTextBlockStyle}" />
+                    CornerRadius="2">
+                    <StackPanel Spacing="10">
+                        <Grid>
+                            <TextBlock
+                                x:Uid="ConfigurationHeading"
+                                Margin="0,1,0,-1"
+                                AutomationProperties.AccessibilityView="Raw"
+                                Foreground="Black"
+                                IsHitTestVisible="False"
+                                Opacity="0.9"
+                                Style="{ThemeResource BodyStrongTextBlockStyle}" />
+                            <TextBlock
+                                x:Uid="ConfigurationHeading"
+                                Style="{ThemeResource BodyStrongTextBlockStyle}" />
+                        </Grid>
 
                         <Grid
                             x:Name="SettingsGrid"
-                            ColumnSpacing="20"
-                            RowSpacing="14"
+                            ColumnSpacing="16"
+                            RowSpacing="10"
                             SizeChanged="OnSettingsGridSizeChanged">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
@@ -67,7 +86,7 @@
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
 
-                            <StackPanel Spacing="12">
+                            <StackPanel Spacing="8">
                                 <ComboBox
                                     x:Name="PlatformComboBox"
                                     x:Uid="PlatformComboBox"
@@ -77,12 +96,6 @@
                                     ItemsSource="{x:Bind ViewModel.PlatformChoices}"
                                     SelectedItem="{x:Bind ViewModel.SelectedPlatform, Mode=TwoWay}"
                                     TabIndex="1" />
-                                <TextBlock
-                                    Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                                    Style="{ThemeResource CaptionTextBlockStyle}"
-                                    Text="{x:Bind ViewModel.DetectedPlatformLabel, Mode=OneWay}"
-                                    TextWrapping="WrapWholeWords" />
-
                                 <ComboBox
                                     x:Name="SegmentsComboBox"
                                     x:Uid="SegmentsComboBox"
@@ -92,6 +105,12 @@
                                     ItemsSource="{x:Bind ViewModel.SegmentChoices}"
                                     SelectedItem="{x:Bind ViewModel.SelectedSegment, Mode=TwoWay}"
                                     TabIndex="2" />
+
+                                <TextBlock
+                                    Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                    Style="{ThemeResource CaptionTextBlockStyle}"
+                                    Text="{x:Bind ViewModel.DetectedPlatformLabel, Mode=OneWay}"
+                                    TextWrapping="WrapWholeWords" />
 
                                 <CheckBox
                                     x:Name="ExperimentalAcknowledgement"
@@ -105,7 +124,7 @@
                             <StackPanel
                                 x:Name="DeadlineSettings"
                                 Grid.Row="1"
-                                Spacing="12">
+                                Spacing="8">
                                 <ComboBox
                                     x:Name="DeadlineComboBox"
                                     x:Uid="DeadlineComboBox"
@@ -118,7 +137,7 @@
 
                                 <StackPanel
                                     x:Name="CustomDeadlinePanel"
-                                    Spacing="5"
+                                    Spacing="3"
                                     Visibility="{x:Bind ViewModel.CustomDeadlineVisibility, Mode=OneWay}">
                                     <NumberBox
                                         x:Name="CustomDeadlineBox"
@@ -146,20 +165,30 @@
                         </Grid>
 
                         <Border
-                            Padding="0,10,0,0"
+                            Padding="0,8,0,0"
                             BorderBrush="{ThemeResource DividerStrokeColorDefaultBrush}"
                             BorderThickness="0,1,0,0">
                             <StackPanel Spacing="2">
-                                <TextBlock
-                                    x:Uid="ConfigPathHeading"
-                                    Style="{ThemeResource BodyStrongTextBlockStyle}" />
+                                <Grid>
+                                    <TextBlock
+                                        x:Uid="ConfigPathHeading"
+                                        Margin="0,1,0,-1"
+                                        AutomationProperties.AccessibilityView="Raw"
+                                        Foreground="Black"
+                                        IsHitTestVisible="False"
+                                        Opacity="0.9"
+                                        Style="{ThemeResource BodyStrongTextBlockStyle}" />
+                                    <TextBlock
+                                        x:Uid="ConfigPathHeading"
+                                        Style="{ThemeResource BodyStrongTextBlockStyle}" />
+                                </Grid>
                                 <TextBlock
                                     FontFamily="Consolas"
                                     Foreground="{ThemeResource TextFillColorSecondaryBrush}"
                                     IsTextSelectionEnabled="True"
                                     Style="{ThemeResource CaptionTextBlockStyle}"
                                     Text="{x:Bind ViewModel.ConfigPath, Mode=OneWay}"
-                                    TextWrapping="WrapWholeWords" />
+                                    TextTrimming="CharacterEllipsis" />
                             </StackPanel>
                         </Border>
 

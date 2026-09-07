@@ -34,12 +34,12 @@
   <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
   <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
   <data name="WindowTitle" xml:space="preserve"><value>Chronowalker</value></data>
-  <data name="HeroTitle.Text" xml:space="preserve"><value>Take back your time</value></data>
-  <data name="HeroSubtitle.Text" xml:space="preserve"><value>Configure The Blood of Dawnwalker's time segments and story deadline with a verified, reversible Game.ini update.</value></data>
+  <data name="HeroTitle.Text" xml:space="preserve"><value>Chronowalker - Take Back Your Time!</value></data>
+  <data name="HeroSubtitle.Text" xml:space="preserve"><value>Configure Dawnwalker's Time Segments &amp; Story Deadline</value></data>
   <data name="ConfigurationHeading.Text" xml:space="preserve"><value>Configuration</value></data>
-  <data name="PlatformComboBox.Header" xml:space="preserve"><value>Game version</value></data>
-  <data name="PlatformComboBox.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve"><value>Game version</value></data>
-  <data name="PlatformComboBox.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve"><value>Choose automatic detection, Steam or GOG, or Xbox PC.</value></data>
+  <data name="PlatformComboBox.Header" xml:space="preserve"><value>Game.ini location</value></data>
+  <data name="PlatformComboBox.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve"><value>Game.ini location</value></data>
+  <data name="PlatformComboBox.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve"><value>Choose which configuration folder Chronowalker edits: Windows for Steam or GOG, or WinGDK for Xbox PC and Game Pass.</value></data>
   <data name="SegmentsComboBox.Header" xml:space="preserve"><value>Segments per 12-hour phase</value></data>
   <data name="SegmentsComboBox.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve"><value>Segments per 12-hour phase</value></data>
   <data name="SegmentsComboBox.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve"><value>Higher values provide more available time slots. Values above 18 are experimental.</value></data>
@@ -51,7 +51,7 @@
   <data name="CustomDeadlineBox.Header" xml:space="preserve"><value>Custom stored value</value></data>
   <data name="CustomDeadlineBox.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve"><value>Custom stored deadline value</value></data>
   <data name="CustomDeadlineBox.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve"><value>Add one to your intended number of story days. Enter 366 for an effective 365 days.</value></data>
-  <data name="CustomDeadlineGuidance.Text" xml:space="preserve"><value>The game requires a +1 adjustment. If you want 365 playable days, enter 366.</value></data>
+  <data name="CustomDeadlineGuidance.Text" xml:space="preserve"><value>Add +1: for 365 playable days, enter 366.</value></data>
   <data name="ConfigPathHeading.Text" xml:space="preserve"><value>Target Game.ini</value></data>
   <data name="MainCommandBar.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve"><value>Chronowalker actions</value></data>
   <data name="InstallButton.Label" xml:space="preserve"><value>Install / update</value></data>
@@ -80,25 +80,26 @@
   <data name="DeadlineOption60" xml:space="preserve"><value>60 days</value></data>
   <data name="DeadlineOption80" xml:space="preserve"><value>80 days</value></data>
   <data name="DeadlineOption100" xml:space="preserve"><value>100 days</value></data>
+  <data name="DeadlineOptionYear" xml:space="preserve"><value>365 days — 1 year (stores 366)</value></data>
   <data name="DeadlineOptionUnlimited" xml:space="preserve"><value>9999 — effectively unlimited</value></data>
   <data name="DeadlineOptionCustom" xml:space="preserve"><value>Custom</value></data>
   <data name="PlatformOptionAuto" xml:space="preserve"><value>Auto-detect</value></data>
-  <data name="PlatformOptionSteamGog" xml:space="preserve"><value>Steam / GOG</value></data>
-  <data name="PlatformOptionXbox" xml:space="preserve"><value>Xbox PC</value></data>
-  <data name="DetectedSteamGog" xml:space="preserve"><value>Steam / GOG detected.</value></data>
-  <data name="DetectedXbox" xml:space="preserve"><value>Xbox PC detected.</value></data>
+  <data name="PlatformOptionSteamGog" xml:space="preserve"><value>PC — Steam / GOG (Windows)</value></data>
+  <data name="PlatformOptionXbox" xml:space="preserve"><value>Xbox PC / Game Pass (WinGDK)</value></data>
+  <data name="DetectedSteamGog" xml:space="preserve"><value>Windows Game.ini detected (Steam / GOG).</value></data>
+  <data name="DetectedXbox" xml:space="preserve"><value>WinGDK Game.ini detected (Xbox PC / Game Pass).</value></data>
   <data name="DetectedAmbiguous" xml:space="preserve"><value>Both configuration families were found. Choose the correct game version manually.</value></data>
   <data name="DetectedUnknown" xml:space="preserve"><value>No definitive installation was found. Choose the game version manually.</value></data>
-  <data name="ConfigPathUnavailable" xml:space="preserve"><value>Choose Steam / GOG or Xbox PC to resolve the path.</value></data>
-  <data name="CustomDeadlinePreview" xml:space="preserve"><value>Effective deadline: {0:N0} days (stored value: {1:N0}).</value></data>
+  <data name="ConfigPathUnavailable" xml:space="preserve"><value>Choose PC or Xbox PC to select the correct Game.ini.</value></data>
+  <data name="CustomDeadlinePreview" xml:space="preserve"><value>Effective: {0:N0} days · stored: {1:N0}.</value></data>
   <data name="CustomDeadlineInvalidPreview" xml:space="preserve"><value>Enter a positive whole number.</value></data>
   <data name="StatusReadyTitle" xml:space="preserve"><value>Ready</value></data>
   <data name="StatusReadyMessage" xml:space="preserve"><value>Review the settings, then install or export a manual Game.ini.</value></data>
   <data name="StatusDetectionTitle" xml:space="preserve"><value>Game detection</value></data>
   <data name="StatusRecommendedTitle" xml:space="preserve"><value>Recommended settings applied</value></data>
   <data name="StatusRecommendedMessage" xml:space="preserve"><value>18 segments and a custom stored value of 366 give an effective 365-day deadline.</value></data>
-  <data name="StatusChoosePlatformTitle" xml:space="preserve"><value>Choose a game version</value></data>
-  <data name="StatusChoosePlatformMessage" xml:space="preserve"><value>Automatic detection was not definitive, so select Steam / GOG or Xbox PC.</value></data>
+  <data name="StatusChoosePlatformTitle" xml:space="preserve"><value>Choose a Game.ini location</value></data>
+  <data name="StatusChoosePlatformMessage" xml:space="preserve"><value>Automatic detection was not definitive. Select PC for the Windows folder or Xbox PC for the WinGDK folder.</value></data>
   <data name="StatusInvalidDeadlineTitle" xml:space="preserve"><value>Invalid custom deadline</value></data>
   <data name="StatusInvalidDeadlineMessage" xml:space="preserve"><value>Enter a positive whole number. Remember to add one: use 366 for an effective 365 days.</value></data>
   <data name="StatusInstalledTitle" xml:space="preserve"><value>Chronowalker installed</value></data>

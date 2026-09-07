@@ -7,7 +7,7 @@ Chronowalker is an independent, open-source Windows app for configuring the time
 ## Features
 
 - Segment presets: 8, 12, 16, 18, 26, and 32 segments per 12-hour phase.
-- Story deadline presets: 30, 45, 60, 80, 100, and 9999 days.
+- Story deadline presets: 30, 45, 60, 80, 100, 365 (one year), and 9999 days.
 - A **Custom** story deadline field with live effective-day preview.
 - A **Recommended** button that selects 18 segments and stores 366 days, producing an effective 365-day deadline.
 - Automatic Steam/GOG versus Xbox PC detection, with a manual override when detection is ambiguous.
@@ -15,6 +15,7 @@ Chronowalker is an independent, open-source Windows app for configuring the time
 - Automatic rollback state so **Uninstall and restore** can restore the prior values and Read-only state.
 - Manual `Game.ini` export for users who prefer to install the changes themselves.
 - Keyboard-accessible, localized WinUI controls and status messages.
+- A single-file, self-contained x64 release that can be transferred and run without installing .NET or the Windows App Runtime.
 
 ## Important: custom deadlines use +1
 
@@ -26,7 +27,7 @@ The game treats its stored deadline value with an off-by-one adjustment. Add **1
 | 90 days | 91 |
 | 365 days | 366 |
 
-Chronowalker shows both the effective deadline and stored value before it writes anything. Presets retain the established behavior; the 30-day preset writes 31, while other preset values are written as displayed.
+Chronowalker shows both the effective deadline and stored value before it writes anything. The 30-day preset writes 31, and the one-year preset displays 365 days while writing 366. Other preset values retain the established values shown in the menu.
 
 ## What the app changes
 
@@ -75,7 +76,14 @@ dotnet test .\Chronowalker.Core.Tests\Chronowalker.Core.Tests.csproj -c Debug
 Start-Process .\bin\x64\Debug\net10.0-windows10.0.26100.0\win-x64\Chronowalker.exe
 ```
 
-The app uses Microsoft-supported self-contained, unpackaged deployment, so running the output does not require Developer Mode, MSIX registration, or a separately installed Windows App Runtime. Keep the files in the output folder together.
+To create and run the self-contained, single-file x64 distribution:
+
+```powershell
+dotnet publish .\Chronowalker.csproj -p:PublishProfile=win-x64
+Start-Process .\artifacts\publish\win-x64\Chronowalker.exe
+```
+
+The publish profile produces one portable `Chronowalker.exe` with the .NET and Windows App SDK dependencies embedded. It does not require Developer Mode, MSIX registration, a .NET installation, or a separately installed Windows App Runtime. Like other supported single-file WinUI apps, it extracts its embedded runtime to a temporary per-user directory when launched.
 
 ## Project layout
 
@@ -84,6 +92,7 @@ The app uses Microsoft-supported self-contained, unpackaged deployment, so runni
 - `Services` contains Windows-specific install discovery and localization adapters.
 - `ViewModels` contains the MVVM presentation logic.
 - `Strings/en-us` contains user-facing resources.
+- `Properties/PublishProfiles` contains the reproducible portable x64 release profile.
 - `docs` contains implementation and upstream handoff notes.
 
 ## Status and license
