@@ -99,4 +99,4 @@ The publish profile produces one portable `Chronowalker.exe` with the .NET and W
 
 ## Status and license
 
-Chronowalker 0.1.5 is prepared as the first portable binary release. The Nexus Mods page remains unpublished until final review. The source is licensed under GPL-3.0; see [LICENSE](LICENSE).
+Chronowalker 0.1.5 is prepared as the first portable binary release. The source is licensed under GPL-3.0; see [LICENSE](LICENSE).
